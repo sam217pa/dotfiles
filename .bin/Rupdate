@@ -1,0 +1,5 @@
+#!/bin/bash
+mv ~/.Rprofile ~/.Rprofile.bak
+Rscript --vanilla -e "update.packages(repos = getOption('repos'), contriburl = contrib.url('http://cran.univ-lyon1.fr/'), ask = F, checkBuilt= F)"
+mv ~/.Rprofile.bak ~/.Rprofile
+

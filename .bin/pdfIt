@@ -1,0 +1,8 @@
+#!/bin/bash
+# Build the pdf file
+read -p "Enter the name of the input file : " input
+read -p "Enter the name of the output file : " output
+templateloc=~/.templates/TEX/MFE.tex
+
+pandoc -N --template=$templateloc --variable mainfont=Ubuntu --variable sansfont=Ubuntu --variable monofont="Ubuntu Mono" --variable fontsize=12pt --variable version=1.10 $input --latex-engine=xelatex --toc -o $output
+
